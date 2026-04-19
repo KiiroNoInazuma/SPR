@@ -6,12 +6,12 @@
 
     <groupId>ru.app.work</groupId>
     <artifactId>SPR</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>1.0</version>
 
-    <properties>
-        <maven.compiler.source>17</maven.compiler.source>
-        <maven.compiler.target>17</maven.compiler.target>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    </properties>
+    <packaging>pom</packaging>
 
+    <modules>
+        <module>greeting-app</module>
+        <module>io-starter</module>
+    </modules>
 </project>
