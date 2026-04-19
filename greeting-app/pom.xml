@@ -10,7 +10,7 @@
     </parent>
     <groupId>ru.app.work</groupId>
     <artifactId>greeting-app</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>1.0</version>
     <name>greeting-app</name>
     <description>greeting-app</description>
     <url/>
@@ -28,13 +28,18 @@
     </scm>
     <properties>
         <java.version>17</java.version>
+        <io.starter.version>0.0.1-SNAPSHOT</io.starter.version>
     </properties>
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter</artifactId>
         </dependency>
-
+        <dependency>
+            <groupId>ru.app.work</groupId>
+            <artifactId>io-starter</artifactId>
+            <version>1.0</version>
+        </dependency>
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
