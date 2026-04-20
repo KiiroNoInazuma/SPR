@@ -6,3 +6,4 @@ ru:
   app:
     work:
       io-enabled: true
+      locale: ru-RU

@@ -2,7 +2,10 @@ package ru.app.work.greetingapp;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.context.properties.EnableConfigurationProperties;
+import ru.app.work.greetingapp.config.OtusIOConfig;
 
+@EnableConfigurationProperties(OtusIOConfig.class)
 @SpringBootApplication
 public class GreetingAppApplication {
 

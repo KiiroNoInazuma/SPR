@@ -21,7 +21,7 @@ public class StreamsIOService implements IOService {
 
     @Override
     public void outputAsString(Object o) {
-
+        ps.println(o);
     }
 
     @Override

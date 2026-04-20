@@ -4,19 +4,27 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.stereotype.Component;
+import ru.app.work.greetingapp.config.OtusIOConfig;
 import ru.app.work.iostarter.service.IOService;
+import ru.app.work.iostarter.service.LocalizationService;
 
 import static java.util.Objects.isNull;
 
 @Component
 public class AppRunner implements ApplicationRunner {
 
+    private final OtusIOConfig ioConfig;
+
     private final IOService ioService;
 
+    private final LocalizationService localizationService;
 
-    public AppRunner(@Autowired(required = false) IOService ioService) {
+    public AppRunner(@Autowired(required = false) OtusIOConfig ioConfig,
+                     @Autowired(required = false) IOService ioService,
+                     @Autowired(required = false) LocalizationService localizationService) {
         this.ioService = ioService;
-
+        this.ioConfig = ioConfig;
+        this.localizationService = localizationService;
     }
 
 
@@ -28,13 +36,13 @@ public class AppRunner implements ApplicationRunner {
         }
         ioService.outputString("---------------------------------------------");
 
-        ioService.outputAsString(null);
+        ioService.outputAsString(ioConfig);
 
         ioService.outputString("---------------------------------------------");
 
-        Object greetingTarget = null;
-        Object greeting = null;
-        ioService.outputString(null);
+        var greetingTarget = localizationService.getMessage("greeting.target");
+        var greeting = localizationService.getMessage("greeting", greetingTarget);
+        ioService.outputString(greeting);
 
         ioService.outputString("---------------------------------------------");
     }
